@@ -1,0 +1,9 @@
+@app.route('/api/v1.0/rss', methods=['GET'])
+	def asdb():
+		# return "hello"
+		if request.method == 'GET':
+			user = User()
+		
+			for user in User.objects:
+				if request.json['email']==user.email :
+					return	user.rss_links().append(request.json['rss'])
